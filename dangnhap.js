@@ -14,8 +14,8 @@ document.getElementById('password').addEventListener('input', function() {
     var passwordInput = document.getElementById('password');
     var submitButton = document.getElementById('submit-button');
     if (passwordInput.value.trim() !== '') {
-        submitButton.disabled = false; // Kích hoạt nút submit khi có mật khẩu
+        submitButton.disabled = false; 
     } else {
-        submitButton.disabled = true; // Vô hiệu hóa nút submit khi không có mật khẩu
+        submitButton.disabled = true; 
     }
 });
