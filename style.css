@@ -120,7 +120,7 @@ label #btn, label #cancel {
 .text-hinh1 p {
   margin: 10px;
 }
-.button-container {
+.button-container,.button-container1,.button-container2  {
   position: absolute;
   bottom: 435px; 
   left: 50%; 
@@ -128,22 +128,7 @@ label #btn, label #cancel {
   display: flex;
   gap: 20px;
 }
-.button-container1 {
-  position: absolute;
-  bottom: 435px; 
-  left: 50%; 
-  transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
-}
-.button-container2 {
-  position: absolute;
-  bottom: 435px; 
-  left: 50%; 
-  transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
-}
+
 .button {
   border: none;
   padding: 10px 20px;
@@ -629,7 +614,7 @@ section {
   }
   .button-container2 {
 
-    bottom: 455px; 
+    bottom: 480px; 
   }
   .text-hinh1 {
     position: absolute; 
@@ -671,7 +656,12 @@ section {
     position: relative;
     width: 100%; 
   }
-  
+  .tr-hinh3 button, .ph-hinh3 button,
+  .tr-hinh4 button, .ph-hinh4 button,
+  .tr-hinh5 button, .ph-hinh5 button {
+    padding: 10px 20px; 
+    font-size: 16px;
+  }
   .item-hinh3, .item-ph, .item-tr4, .item-ph4, .item-tr5, .item-ph5 {
     width: 100%;
   }
