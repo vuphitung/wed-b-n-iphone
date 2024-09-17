@@ -10,14 +10,14 @@
 <body>
   <div class="app">
     <header>
-      <nav class="menu-bar">
+      <nav class="top-menu">
         <div class="logo">
-          <i class="fab fa-apple" style="font-size: 20px; color: #ffffff;"></i>
+          <a href="#"><i class="fab fa-apple" style="font-size: 25px; color: #ffffff;"></i></a>
         </div>
-        <ul class="nav-links">
+        <ul>
           <li><a href="index.html">Cửa Hàng</a></li>
           <li><a href="#">Mac</a></li>
-          <li><a href="#">iPad</a></li>
+          <li><a href="iPad.html">iPad</a></li>
           <li><a href="iPhone.html">iPhone</a></li>
           <li><a href="#">Watch</a></li>
           <li><a href="#">AirPods</a></li>
@@ -26,12 +26,22 @@
           <li><a href="#">Phụ Kiện</a></li>
           <li><a href="#">Hỗ Trợ</a></li>
         </ul>
-        <div class="item">
-          <i class="ri-search-line"></i>
+        
+        <div class="menu-icon">
+          <div class="icon-container">
+            <div class="search-icon" onclick="navigateTo('search')">
+              <i class="ri-search-line"></i>
+            </div>
+            <div class="shopping-bag-icon" onclick="navigateTo('dangnhap.html')">
+              <i class="ri-shopping-bag-line"></i>
+            </div>
+          </div>
         </div>
-        <a href="dangnhap.html" class="item">
-          <i class="ri-shopping-bag-line"></i>
-        </a>
+        <input type="checkbox" id="check" style="display: none;">
+        <label for="check">
+          <i class="fas fa-bars" id="btn"></i>
+          <i class="fas fa-times" id="cancel"></i>
+        </label>
       </nav>
     </header>
 
@@ -42,7 +52,7 @@
           <h2>iPhone 15 Pro</h2>
           <p>Titan. Thật bền chắc. Thật nhẹ. Thật Pro</p>
         </div>
-        <div class="button-container">
+        <div class="button-container1">
           <button class="button button1" onclick="window.location.href='mua.html'">Mua</button>
           <button class="button button2" onclick="window.location.href='iPhone.html'">Tìm hiểu thêm</button>
         </div>
@@ -188,6 +198,174 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="hinh15">
+       <section>
+         <div class="faq">
+           <div class="question">
+             <h3>Mua Sắm Và Tìm Hiểu</h3>
+             <svg class="icon" width="15" height="10" viewBox="0 0 42 25">
+               <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+             </svg>
+           </div>
+           <div class="answer">
+             <ul>
+               <li><a href="#">Cửa Hàng</a></li>
+               <li><a href="#">Mac</a></li>
+               <li><a href="#">iPad</a></li>
+               <li><a href="#">iPhone</a></li>
+               <li><a href="#">Watch</a></li>
+               <li><a href="#">AirPods</a></li>
+               <li><a href="#">TV & Nhà</a></li>
+               <li><a href="#">AirTag</a></li>
+               <li><a href="#">Phụ Kiện</a></li>
+             </ul>
+           </div>
+         </div>
+         <div class="faq">
+           <div class="question">
+             <h3>Ví Apple</h3>
+             <svg class="icon" width="15" height="10" viewBox="0 0 42 25">
+               <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+             </svg>
+           </div>
+           <div class="answer">
+             <ul>
+               <li><a href="#">Ví</a></li>
+               <li><a href="#">Apple Pay</a></li>
+             </ul>
+           </div>
+         </div>
+         <div class="faq">
+           <div class="question">
+             <h3>Tài Khoản</h3>
+             <svg class="icon" width="15" height="10" viewBox="0 0 42 25">
+               <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+             </svg>
+           </div>
+           <div class="answer">
+             <ul>
+               <li><a href="#">Quản Lý ID Apple Của Bạn</a></li>
+               <li><a href="#">Tài Khoản Apple Store</a></li>
+               <li><a href="#">iCloud.com</a></li>
+             </ul>
+           </div>
+         </div>
+         <div class="faq">
+           <div class="question">
+             <h3>Giải Trí</h3>
+             <svg class="icon" width="15" height="10" viewBox="0 0 42 25">
+               <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+             </svg>
+           </div>
+           <div class="answer">
+             <ul>
+               <li><a href="#">Apple One</a></li>
+               <li><a href="#">Apple TV+</a></li>
+               <li><a href="#">Apple Music</a></li>
+               <li><a href="#">Apple Arcade</a></li>
+               <li><a href="#">Apple Podcasts</a></li>
+               <li><a href="#">Apple Books</a></li>
+             </ul>
+           </div>
+         </div>
+         <div class="faq">
+           <div class="question">
+             <h3>Apple Store</h3>
+             <svg class="icon" width="15" height="10" viewBox="0 0 42 25">
+               <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+             </svg>
+           </div>
+           <div class="answer">
+             <ul>
+               <li><a href="#">Ứng Dụng Apple Store</a></li>
+               <li><a href="#">Apple Trade In</a></li>
+               <li><a href="#">Tài Chính</a></li>
+               <li><a href="#">Tình Trạng Đơn Hàng</a></li>
+               <li><a href="#">Hỗ Trợ Mua Hàn</a></li>
+             </ul>
+           </div>
+         </div>
+         <div class="faq">
+           <div class="question">
+             <h3>Dành Cho Doanh Nghiệp</h3>
+             <svg class="icon" width="15" height="10" viewBox="0 0 42 25">
+               <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+             </svg>
+           </div>
+           <div class="answer">
+             <ul>
+               <li><a href="#">Apple Và Doanh Nghiệp</a></li>
+               <li><a href="#">Mua Hàng Cho Doanh Nghiệp</a></li>
+             </ul>
+           </div>
+         </div>
+         <div class="faq">
+           <div class="question">
+             <h3>Cho Giáo Dục</h3>
+             <svg class="icon" width="15" height="10" viewBox="0 0 42 25">
+               <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+             </svg>
+           </div>
+           <div class="answer">
+             <ul>
+               <li><a href="#">Apple Và Giáo Dục</a></li>
+               <li><a href="#">Mua Hàng Cho Bậc Đại Học</a></li>
+             </ul>
+           </div>
+         </div>
+         <div class="faq">
+           <div class="question">
+             <h3>Cho Chăm Sóc Sức Khỏe</h3>
+             <svg class="icon" width="15" height="10" viewBox="0 0 42 25">
+               <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+             </svg>
+           </div>
+           <div class="answer">
+             <ul>
+               <li><a href="#">Apple Trong Chăm Sóc Sức Khỏe</a></li>
+               <li><a href="#">Mac Trong Chăm Sóc Sức Khỏe</a></li>
+               <li><a href="#">Sức Khỏe Trên Apple Watch</a></li>
+             </ul>
+           </div>
+         </div>
+         <div class="faq">
+           <div class="question">
+             <h3>Giá Trị Cốt Lõi Của Apple</h3>
+             <svg class="icon" width="15" height="10" viewBox="0 0 42 25">
+               <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+             </svg>
+           </div>
+           <div class="answer">
+             <ul>
+               <li><a href="#">Trợ Năng</a></li>
+               <li><a href="#">Môi Trường</a></li>
+               <li><a href="#">Quyền Riêng Tư</a></li>
+               <li><a href="#">Chuỗi Cung Ứng</a></li>
+             </ul>
+           </div>
+         </div>
+         <div class="faq">
+           <div class="question">
+             <h3>Về Apple</h3>
+             <svg class="icon" width="15" height="10" viewBox="0 0 42 25">
+               <path d="M3 3L21 21L39 3" stroke="white" stroke-width="7" stroke-linecap="round"/>
+             </svg>
+           </div>
+           <div class="answer">
+             <ul>
+               <li><a href="#">Newsroom</a></li>
+               <li><a href="#"> Lãnh Đạo Của Apple</a></li>
+               <li><a href="#">Nhà Đầu Tư</a></li>
+               <li><a href="#">Đạo Đức & Quy Tắc</a></li>
+               <li><a href="#"> Sự Kiện</a></li>
+               <li><a href="#">Liên Hệ Apple</a></li>
+             </ul>
+           </div>
+         </div>
+        </section>
       </div>
     </div>
   </div>
