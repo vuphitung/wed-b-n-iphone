@@ -130,7 +130,7 @@ label #btn, label #cancel {
 }
 .button-container1 {
   position: absolute;
-  bottom: 430px; 
+  bottom: 435px; 
   left: 50%; 
   transform: translateX(-50%);
   display: flex;
@@ -481,7 +481,7 @@ label #btn, label #cancel {
   width: 100%;
   margin: auto;
   position: absolute;
-  top: 850%; 
+  top: 800%; 
   left: 50%;
   transform: translate(-50%, 0);
   background-color: white;
@@ -618,7 +618,7 @@ section {
     object-fit: cover;
   }
   .button-container1 {
-    bottom: 400px; 
+    bottom: 450px; 
   }
   
   .text-hinh1 {
@@ -660,7 +660,7 @@ section {
   .tr-hinh3, .ph-hinh3, .tr-hinh4, .ph-hinh4, .tr-hinh5, .ph-hinh5 {
     position: relative;
     width: 100%; 
-    margin-bottom: 10px; 
+    margin-bottom: 0; 
   }
   
   .item-hinh3, .item-ph, .item-tr4, .item-ph4, .item-tr5, .item-ph5 {
