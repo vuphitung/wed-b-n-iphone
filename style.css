@@ -130,12 +130,13 @@ label #btn, label #cancel {
 }
 .button-container1 {
   position: absolute;
-  bottom: 450px; 
+  bottom: 430px; 
   left: 50%; 
   transform: translateX(-50%);
   display: flex;
   gap: 20px;
 }
+
 .button {
   border: none;
   padding: 10px 20px;
@@ -617,13 +618,9 @@ section {
     object-fit: cover;
   }
   .button-container1 {
-    position: absolute;
-    bottom: 540px; 
-    left: 50%; 
-    transform: translateX(-50%);
-    display: flex;
-    gap: 20px;
+    bottom: 400px; 
   }
+  
   .text-hinh1 {
     position: absolute; 
     top: 20%; 
@@ -662,8 +659,8 @@ section {
   
   .tr-hinh3, .ph-hinh3, .tr-hinh4, .ph-hinh4, .tr-hinh5, .ph-hinh5 {
     position: relative;
-    width: 100%; /* Đảm bảo các phần tử chiếm toàn bộ chiều rộng */
-    margin-bottom: 20px; /* Khoảng cách giữa các phần tử */
+    width: 100%; 
+    margin-bottom: 10px; 
   }
   
   .item-hinh3, .item-ph, .item-tr4, .item-ph4, .item-tr5, .item-ph5 {
