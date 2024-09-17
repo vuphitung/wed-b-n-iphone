@@ -659,7 +659,7 @@ section {
   .tr-hinh3 button, .ph-hinh3 button,
   .tr-hinh4 button, .ph-hinh4 button,
   .tr-hinh5 button, .ph-hinh5 button {
-    padding: 10px 20px; 
+    padding: 5px 20px; 
     font-size: 16px;
   }
   .item-hinh3, .item-ph, .item-tr4, .item-ph4, .item-tr5, .item-ph5 {
@@ -681,7 +681,7 @@ section {
   }
   .footer {
     position: absolute;
-    top: 1100%; 
+    top: 1000%; 
     left: 50%;
    transform: translate(-50%, 0);
   }
