@@ -606,11 +606,15 @@ section {
   }
   .responsive-img {
     width: 100%; 
-    height: 400px;
+    height: 300px;
     object-fit: cover;
   }
   .button-container1 {
-    bottom: 480px; 
+    bottom: 470px; 
+  }
+  .button-container2 {
+
+    bottom: 400px; 
   }
   .text-hinh1 {
     position: absolute; 
@@ -687,3 +691,4 @@ section {
     width: 90%;
  }
 }
+
