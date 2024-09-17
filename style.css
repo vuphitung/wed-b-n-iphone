@@ -609,12 +609,8 @@ section {
     height: 500px;
     object-fit: cover;
   }
-  .button-container1 {
-    bottom: 450px; 
-  }
   .button-container2 {
-
-    bottom: 400px; 
+    bottom: 380px; 
   }
   .text-hinh1 {
     position: absolute; 
@@ -691,5 +687,4 @@ section {
     width: 90%;
  }
 }
-
 
