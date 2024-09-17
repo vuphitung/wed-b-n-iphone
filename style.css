@@ -618,7 +618,7 @@ section {
     object-fit: cover;
   }
   .button-container1 {
-    bottom: 450px; 
+    bottom: 480px; 
   }
   
   .text-hinh1 {
@@ -660,18 +660,15 @@ section {
   .tr-hinh3, .ph-hinh3, .tr-hinh4, .ph-hinh4, .tr-hinh5, .ph-hinh5 {
     position: relative;
     width: 100%; 
-    margin-bottom: 0; 
   }
   
   .item-hinh3, .item-ph, .item-tr4, .item-ph4, .item-tr5, .item-ph5 {
     width: 100%;
     height: 800px;
-    object-fit: cover;
   }
   .item-ph5 {
     width: 100%;
     height: 700px;
-    object-fit: cover;
   }
   .ph-hinh5 .button1,
   .ph-hinh5 .button2{
