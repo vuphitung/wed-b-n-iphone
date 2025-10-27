@@ -1,75 +1,152 @@
-let slider = document.querySelector('.slider .list');
-let items = document.querySelectorAll('.slider .list .item');
+// SLIDER FUNCTIONALITY
+const slider = document.querySelector('.slider');
+const list = slider.querySelector('.list');
+const items = list.querySelectorAll('.item');
+const dots = slider.querySelectorAll('.dots li');
 
-let lengthItems = items.length - 1;
-let active = 0;
+let currentIndex = 0;
+let slideCount = items.length;
+let slideWidth = slider.clientWidth;
+let interval = 4000; // 5s
+let timer;
 
-function reloadSlider() {
-    slider.style.left = -items[active].offsetLeft + 'px';
+// Update slider width on resize
+window.addEventListener('resize', () => {
+  slideWidth = slider.clientWidth;
+  moveSlider(currentIndex);
+});
 
-    // Reset lại interval mỗi khi reloadSlider được gọi
-    clearInterval(refreshInterval);
-    refreshInterval = setInterval(() => { nextImage() }, 3000);
+// Move slider function
+function moveSlider(index) {
+  list.style.transform = `translateX(-${slideWidth * index}px)`;
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[index].classList.add('active');
 }
 
-function nextImage() {
-    active = active + 1 <= lengthItems ? active + 1 : 0;
-    reloadSlider();
+// Auto play
+function startAuto() {
+  timer = setInterval(() => {
+    currentIndex = (currentIndex + 1) % slideCount;
+    moveSlider(currentIndex);
+  }, interval);
 }
 
-// Bắt đầu tự động chuyển slide
-let refreshInterval = setInterval(() => { nextImage() }, 3000);
+// Stop auto on hover
+slider.addEventListener('mouseenter', () => clearInterval(timer));
+slider.addEventListener('mouseleave', () => startAuto());
 
-// Điều chỉnh lại slider khi thay đổi kích thước cửa sổ
-window.onresize = function() {
-    reloadSlider();
-};
-
-// Thiết lập ban đầu cho slider
-reloadSlider();
-// Mã JavaScript cho nhiều FAQ
-const faqs = document.querySelectorAll('.faq'); // Chọn tất cả các phần tử .faq
-
-faqs.forEach(faq => {
-  const question = faq.querySelector('.question'); // Chọn phần tử .question trong faq
-  const answer = faq.querySelector('.answer'); // Chọn phần tử .answer trong faq
-  const icon = faq.querySelector('.icon'); // Chọn phần tử .icon trong faq
-
-  question.addEventListener('click', () => {
-    if (answer.style.maxHeight) {
-      answer.style.maxHeight = null; // Ẩn câu trả lời nếu nó đã được mở
-      icon.classList.remove('rotate'); // Xoá lớp .rotate khỏi biểu tượng
-    } else {
-      answer.style.maxHeight = answer.scrollHeight + "px"; // Hiển thị câu trả lời
-      icon.classList.add('rotate'); // Thêm lớp .rotate vào biểu tượng
-    }
+// Dots click
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    currentIndex = i;
+    moveSlider(currentIndex);
   });
 });
 
-function navigateTo(url) {
-  if (url === 'search') {
-    // Thực hiện hành động tìm kiếm hoặc chuyển hướng đến trang tìm kiếm
-    alert('Kích hoạt hành động tìm kiếm'); // Thay thế bằng logic tìm kiếm thực tế
-  } else {
-    window.location.href = url; // Chuyển hướng đến URL được chỉ định
-  }
-}
+// Initialize
+moveSlider(currentIndex);
+startAuto();
 
-const btn = document.getElementById('btn'); // Lấy phần tử có id là 'btn'
-const cancel = document.getElementById('cancel'); // Lấy phần tử có id là 'cancel'
-const navMenu = document.querySelector('nav ul'); // Lấy menu điều hướng
-const check = document.getElementById('check'); // Lấy phần tử checkbox với id 'check'
 
-btn.addEventListener('click', function() {
-  navMenu.style.left = '0'; // Hiển thị menu
-  btn.style.display = 'none'; // Ẩn nút "menu"
-  cancel.style.display = 'block'; // Hiển thị nút "cancel"
-  check.checked = true; // Đánh dấu checkbox
+
+// Smooth scroll effect for hero sections
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {
+  threshold: 0.1
 });
 
-cancel.addEventListener('click', function() {
-  navMenu.style.left = '-100%'; // Ẩn menu
-  btn.style.display = 'block'; // Hiển thị lại nút "menu"
-  cancel.style.display = 'none'; // Ẩn nút "cancel"
-  check.checked = false; // Bỏ đánh dấu checkbox
+document.querySelectorAll('.hero-section, .grid-item').forEach(section => {
+  section.style.opacity = '0';
+  section.style.transform = 'translateY(20px)';
+  section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+  observer.observe(section);
+});
+
+// FOOTER ACCORDION FOR MOBILE
+function initFooterAccordion() {
+  const faqItems = document.querySelectorAll('.faq');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.question');
+
+    question.addEventListener('click', () => {
+      // Only work on mobile
+      if (window.innerWidth <= 768) {
+        const isActive = item.classList.contains('active');
+
+        // Close all other items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+          }
+        });
+
+        // Toggle current item
+        if (isActive) {
+          item.classList.remove('active');
+        } else {
+          item.classList.add('active');
+        }
+      }
+    });
+  });
+}
+
+initFooterAccordion();
+
+// Re-init on resize
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    const faqItems = document.querySelectorAll('.faq');
+    if (window.innerWidth > 768) {
+      faqItems.forEach(item => item.classList.remove('active'));
+    }
+  }, 250);
+});
+// ========== MOBILE MENU HAMBURGER ==========
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const body = document.body;
+const mobileLinks = document.querySelectorAll('.nav-links-mobile a');
+
+// Toggle menu khi click hamburger
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  body.classList.toggle('menu-open');
+});
+
+// Đóng menu khi click vào link
+mobileLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    body.classList.remove('menu-open');
+  });
+});
+
+// Đóng menu khi click bên ngoài
+mobileMenu.addEventListener('click', (e) => {
+  if (e.target === mobileMenu) {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    body.classList.remove('menu-open');
+  }
+});
+
+// Đóng menu khi resize về desktop
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    body.classList.remove('menu-open');
+  }
 });
